@@ -1,7 +1,7 @@
 {
-  "name": "capacitor-widgetsbridge-plugin",
-  "version": "0.2.1",
-  "description": "Capacitor plugin to interact with ios widgetkit",
+  "name": "@bubble-labs/capacitor-widgetsbridge-plugin",
+  "version": "7.0.0",
+  "description": "Capacitor plugin to interact with iOS WidgetKit",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -11,14 +11,14 @@
     "ios/Plugin/",
     "CapacitorWidgetsbridgePlugin.podspec"
   ],
-  "author": "Mustafa (0xn33t)",
+  "author": "Dale Myszewski, Mustafa (0xn33t)",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/0xn33t/capacitor-widgetsbridge-plugin.git.git"
+    "url": "git+https://github.com/greenygh0st/capacitor-widgetsbridge-plugin.git"
   },
   "bugs": {
-    "url": "https://github.com/0xn33t/capacitor-widgetsbridge-plugin.git/issues"
+    "url": "https://github.com/greenygh0st/capacitor-widgetsbridge-plugin/issues"
   },
   "keywords": [
     "capacitor",
