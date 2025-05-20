@@ -1,6 +1,6 @@
 {
   "name": "@bubble-labs/capacitor-widgetsbridge-plugin",
-  "version": "7.0.0",
+  "version": "7.0.1",
   "description": "Capacitor plugin to interact with iOS WidgetKit",
   "publishConfig": {
     "access": "public"
