@@ -4,97 +4,97 @@
  * @since 7.0.0
  */
 export interface WidgetsBridgePlugin {
+  /**
+   * Return the value from user’s defaults database associated with the specified key.
+   *
+   * @param options Options including key and group.
+   * @since 0.0.1
+   * @returns Promise resolving with the retrieved value.
+   */
+  getItem(options: UserDefaultsOptions): Promise<{ results: string }>;
 
   /**
-   * Return the value from user’s defaults database associated with the specified key
+   * Set the value in the user’s defaults database for a specified key.
    *
-   * @param {UserDefaultsOptions} options
+   * @param options Options including key, value, and group.
    * @since 0.0.1
-   * @returns {Promise<DataResults<any>>} Promise represents the value
+   * @returns Promise resolving with operation success.
    */
-  getItem(options: UserDefaultsOptions): Promise<DataResults<any>>;
+  setItem(options: UserDefaultsOptions): Promise<{ results: boolean }>;
 
   /**
-   * Set the value to user’s defaults database associated with the specified key
+   * Remove the value from user’s defaults database for a specified key.
    *
-   * @param {UserDefaultsOptions} options
+   * @param options Options including key and group.
    * @since 0.0.1
-   * @returns {Promise<DataResults<boolean>>} Promise represents the operation results
+   * @returns Promise resolving with operation success.
    */
-  setItem(options: UserDefaultsOptions): Promise<DataResults<boolean>>;
+  removeItem(options: UserDefaultsOptions): Promise<{ results: boolean }>;
 
   /**
-   * Remove the value from user’s defaults database associated with the specified key
+   * Reload all configured widget timelines.
    *
-   * @param {UserDefaultsOptions} options
    * @since 0.0.1
-   * @returns {Promise<DataResults<boolean>>} Promise represents the operation results
+   * @returns Promise resolving with operation success.
    */
-  removeItem(options: UserDefaultsOptions): Promise<DataResults<boolean>>;
+  reloadAllTimelines(): Promise<{ results: boolean }>;
 
   /**
-   * Reloads the timelines for all configured widgets belonging to the containing app
+   * Reload widget timelines for a specific kind.
    *
+   * @param options Widget kind identifier.
    * @since 0.0.1
-   * @returns {Promise<DataResults<boolean>>} Promise represents the operation results
+   * @returns Promise resolving with operation success.
    */
-  reloadAllTimelines(): Promise<DataResults<boolean>>;
+  reloadTimelines(options: TimelinesOptions): Promise<{ results: boolean }>;
 
   /**
-   * Reloads the timelines for all widgets of a particular kind
-   *
-   * @param {TimelinesOptions} options
-   * @since 0.0.1
-   * @returns {Promise<DataResults<boolean>>} Promise represents the operation results
-   */
-  reloadTimelines(options: TimelinesOptions): Promise<DataResults<boolean>>;
-
-  /**
-   * Get current widget configurations
+   * Get current widget configurations.
    *
    * @since 0.0.1
-   * @returns {Promise<DataResults<any>>} Promise represents the operation results
+   * @returns Promise resolving with configuration data.
    */
-  getCurrentConfigurations(): Promise<DataResults<any>>;
+  getCurrentConfigurations(): Promise<{ results: any }>;
 }
 
-export interface UserDefaultsOptions{
+/**
+ * Options for user defaults database operations.
+ *
+ * @since 0.0.1
+ */
+export interface UserDefaultsOptions {
   /**
-   * The key whose value to retrieve from storage.
+   * The key whose value to retrieve, set, or remove.
    *
    * @since 0.0.1
    */
   key: string;
 
   /**
-   * User defaults database name which holds and organizes key/value pairs
+   * The user defaults group to store/retrieve data from.
    *
    * @since 0.0.1
    */
   group: string;
 
   /**
-   * The value to set in storage with the associated key
+   * The value to set (for `setItem` only).
    *
    * @since 0.0.1
    */
   value?: string;
 }
 
-export interface TimelinesOptions{
+/**
+ * Options for specifying the widget kind when reloading timelines.
+ *
+ * @since 0.0.1
+ */
+export interface TimelinesOptions {
   /**
-   * A string that identifies the widget and matches the value you used when you created the widget’s configuration
+   * The widget kind identifier.
    *
    * @since 0.0.1
    */
   ofKind: string;
-}
-
-export interface DataResults<T>{
-  /**
-   * Holds response results from native code
-   *
-   * @since 0.0.1
-   */
-  results: T;
 }
