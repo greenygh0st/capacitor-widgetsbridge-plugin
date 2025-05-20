@@ -4,5 +4,5 @@ import type { WidgetsBridgePlugin } from './definitions';
 
 const WidgetsBridgePlugin = registerPlugin<WidgetsBridgePlugin>('WidgetsBridgePlugin');
 
-export type { WidgetsBridgePlugin } from './definitions';
-// export { WidgetsBridgePlugin };
+export * from './definitions';
+export { WidgetsBridgePlugin };
