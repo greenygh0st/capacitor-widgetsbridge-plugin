@@ -2,6 +2,9 @@
   "name": "@bubble-labs/capacitor-widgetsbridge-plugin",
   "version": "7.0.0",
   "description": "Capacitor plugin to interact with iOS WidgetKit",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
