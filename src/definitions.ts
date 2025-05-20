@@ -1,3 +1,8 @@
+/**
+ * Provides access to native iOS WidgetKit APIs.
+ *
+ * @since 7.0.0
+ */
 export interface WidgetsBridgePlugin {
 
   /**
